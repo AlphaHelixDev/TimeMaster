@@ -63,33 +63,37 @@ public class YearFrame extends AbstractFrame {
 		});
 
 		wetterButton.addActionListener(e -> {
-			this.dispose(); new InfoFrame("Wetter im Jahr: " + info.getYear(), this.info, this.info.getWeather());
+			this.dispose();
+			new InfoFrame("Wetter im Jahr: " + info.getYear(), this.info, this.info.getWeather(), "Wetter");
 		});
 
 		sportBasicButton.addActionListener(e -> {
-			this.dispose(); new InfoFrame("Sport im Jahr: " + info.getYear(), this.info, this.info.getSport());
+			this.dispose(); new InfoFrame("Sport im Jahr: " + info.getYear(), this.info, this.info.getSport(), "Sport");
 		});
 
 		politikBasicButton.addActionListener(e -> {
-			this.dispose(); new InfoFrame("Politisches im Jahr: " + info.getYear(), this.info, this.info.getPolitics());
+			this.dispose();
+			new InfoFrame("Politisches im Jahr: " + info.getYear(), this.info, this.info.getPolitics(), "Politik");
 		});
 
 		lokalesBasicButton.addActionListener(e -> {
-			this.dispose(); new InfoFrame("Lokales im Jahr: " + info.getYear(), this.info, this.info.getLocal());
+			this.dispose();
+			new InfoFrame("Lokales im Jahr: " + info.getYear(), this.info, this.info.getLocal(), "Lokales");
 		});
 
 		wissenschaftBasicButton.addActionListener(e -> {
 			this.dispose();
-			new InfoFrame("Wissenschaftliches im Jahr: " + info.getYear(), this.info, this.info.getSciene());
+			new InfoFrame("Wissenschaftliches im Jahr: " + info.getYear(), this.info, this.info.getSciene(), "Wissenschaft");
 		});
 
 		literaturBasicButton.addActionListener(e -> {
 			this.dispose();
-			new InfoFrame("Literarisches im Jahr: " + info.getYear(), this.info, this.info.getLiterature());
+			new InfoFrame("Literarisches im Jahr: " + info.getYear(), this.info, this.info.getLiterature(), "Literatur");
 		});
 
 		kulturBasicButton.addActionListener(e -> {
-			this.dispose(); new InfoFrame("Kulturelles im Jahr: " + info.getYear(), this.info, this.info.getCulture());
+			this.dispose();
+			new InfoFrame("Kulturelles im Jahr: " + info.getYear(), this.info, this.info.getCulture(), "Kultur");
 		});
 
 		downloadInfosButton.addActionListener(e -> {

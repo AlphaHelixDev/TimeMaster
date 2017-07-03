@@ -20,28 +20,14 @@
 
 package de.alphahelix.timemaster.instances;
 
-import de.alphahelix.timemaster.Main;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
-public class BasicPanel extends JPanel {
-
-	private static Image ico;
-
-	static {
-		try {
-			ico = ImageIO.read(Main.class.getResourceAsStream("/bg.png"));
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
+public class BasicPanel extends JEditorPane {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		super.paintComponent(g); g.drawImage(ico, 0, 0, null);
+		g.setColor(Color.black); g.fillRect(0, 0, getWidth(), getHeight()); super.paintComponent(g);
 	}
 
 	@Override

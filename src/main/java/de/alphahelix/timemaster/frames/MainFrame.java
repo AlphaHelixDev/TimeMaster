@@ -27,11 +27,11 @@ import java.awt.*;
 
 public class MainFrame extends AbstractFrame {
 	private JPanel panel1;
-	private JLabel chooseYearLBL;
 	private JButton submitButton;
 	private JSlider chooseYearSlider;
 	private JButton neuerBeitragButton;
 	private JPanel chooseYear;
+	private JLabel chooseYearLBL;
 
 	public MainFrame() throws HeadlessException {
 		super("Home");

@@ -25,7 +25,6 @@ import de.alphahelix.timemaster.frames.MainFrame;
 import de.alphahelix.timemaster.instances.Information;
 import de.alphahelix.timemaster.instances.YearInformation;
 
-import javax.swing.*;
 import java.util.HashMap;
 
 public class Main {
@@ -33,11 +32,7 @@ public class Main {
 	private static final HashMap<Integer, YearFile> FILES = new HashMap<>();
 
 	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-		} catch(ClassNotFoundException | InstantiationException | UnsupportedLookAndFeelException | IllegalAccessException e) {
-			e.printStackTrace();
-		} launch();
+		launch();
 	}
 
 

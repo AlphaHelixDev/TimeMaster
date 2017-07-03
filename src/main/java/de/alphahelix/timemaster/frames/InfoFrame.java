@@ -23,8 +23,6 @@ package de.alphahelix.timemaster.frames;
 import de.alphahelix.timemaster.instances.*;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 
 public class InfoFrame extends AbstractFrame {
@@ -32,29 +30,28 @@ public class InfoFrame extends AbstractFrame {
 	private YearInformation yearInfo;
 	private JPanel panel1;
 	private BackButton backButton;
-	private JTextPane textPane;
+	private JEditorPane textPane;
+	private JScrollPane scroller;
+	private DownloadButton editButton;
 
-	public InfoFrame(String title, YearInformation yearInfo, Information info) throws HeadlessException {
+	public InfoFrame(String title, YearInformation yearInfo, Information info, String name) throws HeadlessException {
 		super(title); this.yearInfo = yearInfo;
 
 		setContentPane(panel1); setJMenuBar(new BasicMenuBar());
 
-		final BasicStyledDoc doc = new BasicStyledDoc(new StyleContext());
+		BasicScrollPane.init(scroller);
 
-		try {
-			doc.insertString(0, info.getDescription(), null);
-		} catch(BadLocationException e) {
-			e.printStackTrace();
-		}
+		textPane.setForeground(Color.WHITE); textPane.setText(info.getDescription());
 
-		textPane.setStyledDocument(doc);
-
-		System.out.println(textPane.getBackground());
 
 		init();
 
 		backButton.addActionListener(e -> {
 			this.dispose(); new YearFrame(getYearInfo());
+		});
+
+		editButton.addActionListener(e -> {
+			this.dispose(); new EditFrame(name + " editieren im Jahre " + yearInfo.getYear(), yearInfo, info);
 		});
 	}
 
