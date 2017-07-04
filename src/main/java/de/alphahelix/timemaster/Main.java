@@ -20,8 +20,6 @@ package de.alphahelix.timemaster;
 
 import de.alphahelix.timemaster.files.YearFile;
 import de.alphahelix.timemaster.frames.MainFrame;
-import de.alphahelix.timemaster.instances.Information;
-import de.alphahelix.timemaster.instances.YearInformation;
 
 import java.util.HashMap;
 
@@ -33,18 +31,15 @@ public class Main {
 		launch();
 	}
 
-
 	private static void launch() {
 		new MainFrame();
-
-		for(int i = 2000; i < 2021; i++) {
-			YearFile yearFile = new YearFile(i, new YearInformation(i, new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos")));
-
-			FILES.put(i, yearFile); YearInformation.register(yearFile.getInfo());
-		}
 	}
 
 	public static YearFile getFile(int year) {
 		if(FILES.containsKey(year)) return FILES.get(year); return null;
+	}
+
+	public static void addFile(int year, YearFile yf) {
+		FILES.put(year, yf);
 	}
 }

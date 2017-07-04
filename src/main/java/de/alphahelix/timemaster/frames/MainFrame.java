@@ -18,6 +18,10 @@
 
 package de.alphahelix.timemaster.frames;
 
+import de.alphahelix.timemaster.Main;
+import de.alphahelix.timemaster.files.YearFile;
+import de.alphahelix.timemaster.instances.BasicSpinner;
+import de.alphahelix.timemaster.instances.Information;
 import de.alphahelix.timemaster.instances.YearInformation;
 
 import javax.swing.*;
@@ -26,7 +30,7 @@ import java.awt.*;
 public class MainFrame extends AbstractFrame {
 	private JPanel panel1;
 	private JButton submitButton;
-	private JSlider chooseYearSlider;
+	private JSpinner chooseYearField;
 	private JButton neuerBeitragButton;
 	private JPanel chooseYear;
 	private JLabel chooseYearLBL;
@@ -36,19 +40,33 @@ public class MainFrame extends AbstractFrame {
 
 		setContentPane(panel1);
 
-		chooseYear.setBackground(new Color(51, 153, 255));
+		chooseYear.setBackground(new Color(51, 153, 255)); chooseYearField.setValue(1916);
 
 		submitButton.addActionListener((e) -> {
-			if(chooseYearSlider.getValue() > 2017) new YearFrame(YearInformation.getInfo(2017));
-			else new YearFrame(YearInformation.getInfo(chooseYearSlider.getValue())); this.dispose();
+			Main.addFile((int) chooseYearField.getValue(), new YearFile((int) chooseYearField.getValue(), new YearInformation((Integer) chooseYearField.getValue(), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"))));
+
+			YearInformation.register(Main.getFile((int) chooseYearField.getValue()).getInfo());
+
+			YearInformation info;
+
+			if((int) chooseYearField.getValue() > 2017) {
+				info = YearInformation.getInfo(2017);
+			} else {
+				info = YearInformation.getInfo((int) chooseYearField.getValue());
+			}
+
+			new YearFrame(info); this.dispose();
 		});
 
 		neuerBeitragButton.addActionListener(e -> {
-			this.dispose(); if(chooseYearSlider.getValue() > 2017) new SubmitInfoFrame(YearInformation.getInfo(2017));
-			else new SubmitInfoFrame(YearInformation.getInfo(chooseYearSlider.getValue()));
+			this.dispose();
+			if((int) chooseYearField.getValue() > 2017) new SubmitInfoFrame(YearInformation.getInfo(2017));
+			else new SubmitInfoFrame(YearInformation.getInfo((Integer) chooseYearField.getValue()));
 		});
 
-		chooseYearSlider.setLabelTable(chooseYearSlider.createStandardLabels(5));
+		BasicSpinner.init(chooseYearField);
+
+		chooseYearField.setOpaque(false);
 
 		init();
 	}
