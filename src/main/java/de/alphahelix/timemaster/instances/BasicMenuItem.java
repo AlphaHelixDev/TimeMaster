@@ -22,15 +22,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasicMenuItem extends JMenuItem {
-
-	public BasicMenuItem(String text) {
+	
+	public BasicMenuItem (String text) {
 		super(text);
 	}
-
+	
 	@Override
-	protected void paintComponent(Graphics g) {
+	protected void paintComponent (Graphics g) {
 		super.paintComponent(g);
-
-		Graphics2D g2d = (Graphics2D) g; g2d.setColor(new Color(140, 140, 140));
+		
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setColor(new Color(140, 140, 140));
 	}
 }

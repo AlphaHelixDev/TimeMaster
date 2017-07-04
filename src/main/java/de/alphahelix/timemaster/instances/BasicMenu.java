@@ -22,8 +22,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasicMenu extends JMenu {
-
-	public BasicMenu(String s) {
-		super(s); setBackground(new Color(77, 77, 77)); setForeground(Color.WHITE);
+	
+	public BasicMenu (String s) {
+		super(s);
+		setBackground(new Color(77, 77, 77));
+		setForeground(Color.WHITE);
 	}
 }

@@ -27,19 +27,20 @@ public class Main {
 
 	private static final HashMap<Integer, YearFile> FILES = new HashMap<>();
 
-	public static void main(String[] args) {
+	public static void main (String[] args) {
 		launch();
 	}
 
-	private static void launch() {
+	private static void launch () {
 		new MainFrame();
 	}
 
-	public static YearFile getFile(int year) {
-		if(FILES.containsKey(year)) return FILES.get(year); return null;
+	public static YearFile getFile (int year) {
+		if(FILES.containsKey(year)) return FILES.get(year);
+		return null;
 	}
 
-	public static void addFile(int year, YearFile yf) {
+	public static void addFile (int year, YearFile yf) {
 		FILES.put(year, yf);
 	}
 }

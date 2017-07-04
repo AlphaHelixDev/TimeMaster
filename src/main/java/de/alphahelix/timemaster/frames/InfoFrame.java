@@ -32,28 +32,33 @@ public class InfoFrame extends AbstractFrame {
 	private JScrollPane scroller;
 	private DownloadButton editButton;
 
-	public InfoFrame(String title, YearInformation yearInfo, Information info, String name) throws HeadlessException {
-		super(title); this.yearInfo = yearInfo;
+	public InfoFrame (String title, YearInformation yearInfo, Information info, String name) throws HeadlessException {
+		super(title);
+		this.yearInfo = yearInfo;
 
-		setContentPane(panel1); setJMenuBar(new BasicMenuBar());
-
+		setContentPane(panel1);
+		setJMenuBar(new BasicMenuBar());
+		
 		BasicScrollPane.init(scroller);
 
-		textPane.setForeground(Color.WHITE); textPane.setText(info.getDescription());
-
-
+		textPane.setForeground(Color.WHITE);
+		textPane.setText(info.getDescription());
+		
+		
 		init();
 
 		backButton.addActionListener(e -> {
-			this.dispose(); new YearFrame(getYearInfo());
+			this.dispose();
+			new YearFrame(getYearInfo());
 		});
 
 		editButton.addActionListener(e -> {
-			this.dispose(); new EditFrame(name + " editieren im Jahre " + yearInfo.getYear(), yearInfo, info);
+			this.dispose();
+			new EditFrame(name + " editieren im Jahre " + yearInfo.getYear(), yearInfo, info);
 		});
 	}
 
-	public YearInformation getYearInfo() {
+	public YearInformation getYearInfo () {
 		return yearInfo;
 	}
 }

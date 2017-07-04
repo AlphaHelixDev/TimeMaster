@@ -22,29 +22,43 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasicButton extends JButton {
-
-	public BasicButton() {
-		setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x343434)); setForeground(Color.WHITE);
+	
+	public BasicButton () {
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x343434));
+		setForeground(Color.WHITE);
 		setUI(new StyledButtonUI());
 	}
-
-	public BasicButton(Icon icon) {
-		super(icon); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x343434));
-		setForeground(Color.WHITE); setUI(new StyledButtonUI());
+	
+	public BasicButton (Icon icon) {
+		super(icon);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x343434));
+		setForeground(Color.WHITE);
+		setUI(new StyledButtonUI());
 	}
-
-	public BasicButton(String text) {
-		super(text); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x343434));
-		setForeground(Color.WHITE); setUI(new StyledButtonUI());
+	
+	public BasicButton (String text) {
+		super(text);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x343434));
+		setForeground(Color.WHITE);
+		setUI(new StyledButtonUI());
 	}
-
-	public BasicButton(Action a) {
-		super(a); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x343434));
-		setForeground(Color.WHITE); setUI(new StyledButtonUI());
+	
+	public BasicButton (Action a) {
+		super(a);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x343434));
+		setForeground(Color.WHITE);
+		setUI(new StyledButtonUI());
 	}
-
-	public BasicButton(String text, Icon icon) {
-		super(text, icon); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0xedeeef));
-		setForeground(Color.WHITE); setUI(new StyledButtonUI());
+	
+	public BasicButton (String text, Icon icon) {
+		super(text, icon);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0xedeeef));
+		setForeground(Color.WHITE);
+		setUI(new StyledButtonUI());
 	}
 }

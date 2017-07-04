@@ -25,17 +25,22 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class TransparentTextPane extends JTextPane {
-
-	public TransparentTextPane() {
+	
+	public TransparentTextPane () {
 		setOpaque(false);
 		setBorder(new CompoundBorder(new EmptyBorder(10, 10, 10, 10), new LineBorder(Color.LIGHT_GRAY)));
 	}
-
+	
 	@Override
-	protected void paintComponent(Graphics g) {
-		g.setColor(new Color(255, 255, 255, 128)); Insets insets = getInsets(); int x = insets.left; int y = insets.top;
-		int width = getWidth() - (insets.left + insets.right); int height = getHeight() - (insets.top + insets.bottom);
-		g.fillRect(x, y, width, height); super.paintComponent(g);
+	protected void paintComponent (Graphics g) {
+		g.setColor(new Color(255, 255, 255, 128));
+		Insets insets = getInsets();
+		int x = insets.left;
+		int y = insets.top;
+		int width = getWidth() - (insets.left + insets.right);
+		int height = getHeight() - (insets.top + insets.bottom);
+		g.fillRect(x, y, width, height);
+		super.paintComponent(g);
 	}
-
+	
 }

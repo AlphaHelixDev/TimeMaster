@@ -24,25 +24,26 @@ import java.awt.*;
 
 public class BasicSpinner {
 
-	public static void init(JSpinner spinner) {
+	public static void init (JSpinner spinner) {
 		//		spinner.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(new Color(52, 153, 255)), BorderFactory.createEmptyBorder(2, 4, 2, 1)));
 
 		spinner.setUI(new BasicSpinnerUI() {
 			@Override
-			protected Component createPreviousButton() {
+			protected Component createPreviousButton () {
 				return null;
 			}
 
 			@Override
-			protected Component createNextButton() {
+			protected Component createNextButton () {
 				return null;
 			}
 		});
 
 		((JSpinner.DefaultEditor) spinner.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
 
-		spinner.getEditor().setOpaque(true); spinner.getEditor().setBackground(new Color(52, 52, 52));
-
+		spinner.getEditor().setOpaque(true);
+		spinner.getEditor().setBackground(new Color(52, 52, 52));
+		
 		spinner.getEditor().getComponent(0).setBackground(new Color(52, 153, 255));
 		spinner.getEditor().getComponent(0).setForeground(Color.WHITE);
 	}

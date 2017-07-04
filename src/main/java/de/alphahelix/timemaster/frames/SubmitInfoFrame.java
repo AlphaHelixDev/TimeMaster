@@ -35,55 +35,91 @@ public class SubmitInfoFrame extends AbstractFrame {
 	private JLabel savedLbl;
 	private JScrollPane scroller;
 	private JEditorPane textPane;
-
-	public SubmitInfoFrame(YearInformation yearInfo) throws HeadlessException {
+	
+	public SubmitInfoFrame (YearInformation yearInfo) throws HeadlessException {
 		super("Gebe einen neuen Artikel für das Jahr " + yearInfo.getYear() + " ab!");
-
-		setContentPane(panel1); setJMenuBar(new BasicMenuBar());
-
-		textPane.setText("Bitte wähle eine Informationsnische"); textPane.setForeground(Color.WHITE);
-
+		
+		setContentPane(panel1);
+		setJMenuBar(new BasicMenuBar());
+		
+		textPane.setText("Bitte wähle eine Informationsnische");
+		textPane.setForeground(Color.WHITE);
+		
 		BasicScrollPane.init(scroller);
-
-		savedLbl.setForeground(Color.WHITE); savedLbl.setFont(savedLbl.getFont().deriveFont(Font.PLAIN, 18));
-
-		list.setBackground(new Color(51, 153, 255)); list.setForeground(Color.WHITE);
-
+		
+		savedLbl.setForeground(Color.WHITE);
+		savedLbl.setFont(savedLbl.getFont().deriveFont(Font.PLAIN, 18));
+		
+		list.setBackground(new Color(51, 153, 255));
+		list.setForeground(Color.WHITE);
+		
 		backButton.addActionListener(e -> {
-			this.dispose(); new YearFrame(yearInfo);
+			this.dispose();
+			new YearFrame(yearInfo);
 		});
-
+		
 		abschickenButton.addActionListener(e -> {
 			if(list.getSelectedIndex() != -1) {
 				switch(list.getSelectedIndex()) {
-					case 0: yearInfo.getCulture().setDescription(textPane.getText()); break;
-					case 1: yearInfo.getLiterature().setDescription(textPane.getText()); break;
-					case 2: yearInfo.getLocal().setDescription(textPane.getText()); break;
-					case 3: yearInfo.getPolitics().setDescription(textPane.getText()); break;
-					case 4: yearInfo.getSciene().setDescription(textPane.getText()); break;
-					case 5: yearInfo.getSport().setDescription(textPane.getText()); break;
-					case 6: yearInfo.getWeather().setDescription(textPane.getText()); break;
+					case 0:
+						yearInfo.getCulture().setDescription(textPane.getText());
+						break;
+					case 1:
+						yearInfo.getLiterature().setDescription(textPane.getText());
+						break;
+					case 2:
+						yearInfo.getLocal().setDescription(textPane.getText());
+						break;
+					case 3:
+						yearInfo.getPolitics().setDescription(textPane.getText());
+						break;
+					case 4:
+						yearInfo.getSciene().setDescription(textPane.getText());
+						break;
+					case 5:
+						yearInfo.getSport().setDescription(textPane.getText());
+						break;
+					case 6:
+						yearInfo.getWeather().setDescription(textPane.getText());
+						break;
 				}
-
-				Main.getFile(yearInfo.getYear()).setValue("info", yearInfo); savedLbl.setVisible(true);
+				
+				Main.getFile(yearInfo.getYear()).setValue("info", yearInfo);
+				savedLbl.setVisible(true);
 			}
 		});
-
+		
 		init();
-
+		
 		textPane.setEnabled(false);
-
+		
 		list.addListSelectionListener(e -> {
 			if(list.getSelectedIndex() != -1) {
 				switch(list.getSelectedIndex()) {
-					case 0: textPane.setText(yearInfo.getCulture().getDescription()); break;
-					case 1: textPane.setText(yearInfo.getLiterature().getDescription()); break;
-					case 2: textPane.setText(yearInfo.getLocal().getDescription()); break;
-					case 3: textPane.setText(yearInfo.getPolitics().getDescription()); break;
-					case 4: textPane.setText(yearInfo.getSciene().getDescription()); break;
-					case 5: textPane.setText(yearInfo.getSport().getDescription()); break;
-					case 6: textPane.setText(yearInfo.getWeather().getDescription()); break;
-				} textPane.setComponentPopupMenu(new PopUpMenu(textPane)); textPane.setEnabled(true);
+					case 0:
+						textPane.setText(yearInfo.getCulture().getDescription());
+						break;
+					case 1:
+						textPane.setText(yearInfo.getLiterature().getDescription());
+						break;
+					case 2:
+						textPane.setText(yearInfo.getLocal().getDescription());
+						break;
+					case 3:
+						textPane.setText(yearInfo.getPolitics().getDescription());
+						break;
+					case 4:
+						textPane.setText(yearInfo.getSciene().getDescription());
+						break;
+					case 5:
+						textPane.setText(yearInfo.getSport().getDescription());
+						break;
+					case 6:
+						textPane.setText(yearInfo.getWeather().getDescription());
+						break;
+				}
+				textPane.setComponentPopupMenu(new PopUpMenu(textPane));
+				textPane.setEnabled(true);
 			}
 		});
 	}

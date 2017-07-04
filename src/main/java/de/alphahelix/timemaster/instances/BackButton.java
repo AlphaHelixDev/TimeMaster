@@ -22,29 +22,43 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BackButton extends JButton {
-
-	public BackButton() {
-		setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0xB30000)); setForeground(Color.white);
+	
+	public BackButton () {
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0xB30000));
+		setForeground(Color.white);
 		setUI(new StyledButtonUI());
 	}
-
-	public BackButton(Icon icon) {
-		super(icon); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0xB30000));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public BackButton (Icon icon) {
+		super(icon);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0xB30000));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
-
-	public BackButton(String text) {
-		super(text); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0xB30000));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public BackButton (String text) {
+		super(text);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0xB30000));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
-
-	public BackButton(Action a) {
-		super(a); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0xB30000));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public BackButton (Action a) {
+		super(a);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0xB30000));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
-
-	public BackButton(String text, Icon icon) {
-		super(text, icon); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0xB30000));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public BackButton (String text, Icon icon) {
+		super(text, icon);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0xB30000));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
 }

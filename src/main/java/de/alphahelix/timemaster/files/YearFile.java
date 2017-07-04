@@ -22,15 +22,15 @@ import de.alphahelix.pojal.files.SimpleJSONFile;
 import de.alphahelix.timemaster.instances.YearInformation;
 
 public class YearFile extends SimpleJSONFile {
-	public YearFile(int year, YearInformation information) {
+	public YearFile (int year, YearInformation information) {
 		super(System.getProperty("user.home") + "/TimeMaster/years", year + ".json");
-
+		
 		if(!jsonContains("info")) {
 			setValue("info", information);
 		}
 	}
-
-	public YearInformation getInfo() {
+	
+	public YearInformation getInfo () {
 		return getValue("info", YearInformation.class);
 	}
 }

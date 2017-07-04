@@ -22,14 +22,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasicPanel extends JEditorPane {
-
+	
 	@Override
-	protected void paintComponent(Graphics g) {
-		g.setColor(Color.black); g.fillRect(0, 0, getWidth(), getHeight()); super.paintComponent(g);
+	protected void paintComponent (Graphics g) {
+		g.setColor(Color.black);
+		g.fillRect(0, 0, getWidth(), getHeight());
+		super.paintComponent(g);
 	}
-
+	
 	@Override
-	public Dimension getPreferredSize() {
+	public Dimension getPreferredSize () {
 		return new Dimension(1280, 720);
 	}
 }

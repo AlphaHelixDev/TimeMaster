@@ -26,19 +26,22 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 
 public class PopUpMenu extends JPopupMenu {
-	public PopUpMenu(JEditorPane pane) {
+	public PopUpMenu (JEditorPane pane) {
 		JMenuItem anItem = new JMenuItem("Einfügen");
-
+		
 		anItem.addActionListener(e -> paste(pane));
-
+		
 		add(anItem);
 	}
-
-	private void paste(JEditorPane pane) {
-		Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard(); Transferable t = c.getContents(this);
-
-		if(t == null) return; try {
-			int caretPos = pane.getCaretPosition(); try {
+	
+	private void paste (JEditorPane pane) {
+		Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+		Transferable t = c.getContents(this);
+		
+		if(t == null) return;
+		try {
+			int caretPos = pane.getCaretPosition();
+			try {
 				pane.getDocument().insertString(caretPos, (String) t.getTransferData(DataFlavor.stringFlavor), null);
 			} catch(BadLocationException ex) {
 				ex.printStackTrace();

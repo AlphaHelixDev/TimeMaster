@@ -28,16 +28,19 @@ import java.awt.*;
 import java.io.IOException;
 
 public class AbstractFrame extends JFrame {
-
-	public AbstractFrame(String title) throws HeadlessException {
+	
+	public AbstractFrame (String title) throws HeadlessException {
 		super(title);
-
+		
 	}
-
-	public void init() {
+	
+	public void init () {
 		getContentPane().setBackground(new Color(52, 52, 52));
-
-		setSize(1280, 720); setLocationRelativeTo(null); setVisible(true); setResizable(false);
+		
+		setSize(1280, 720);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setResizable(false);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		if(OSCheck.getOperatingSystemType() == OSCheck.OSType.Windows)
 			setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png"));

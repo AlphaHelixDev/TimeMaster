@@ -19,18 +19,19 @@
 package de.alphahelix.timemaster.instances;
 
 public class Information {
-
+	
 	private String description;
-
-	public Information(String description) {
+	
+	public Information (String description) {
 		this.description = description;
 	}
-
-	public String getDescription() {
+	
+	public String getDescription () {
 		return description;
 	}
-
-	public Information setDescription(String description) {
-		this.description = description; return this;
+	
+	public Information setDescription (String description) {
+		this.description = description;
+		return this;
 	}
 }

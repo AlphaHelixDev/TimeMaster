@@ -31,21 +31,24 @@ public class EditFrame extends AbstractFrame {
 	private JPanel pane1;
 	private JLabel savedLbl;
 	private DownloadButton abschickenButton;
-
-	public EditFrame(String title, YearInformation info, Information toEdit) {
+	
+	public EditFrame (String title, YearInformation info, Information toEdit) {
 		super(title);
-
-		setContentPane(pane1); setJMenuBar(new BasicMenuBar());
-
+		
+		setContentPane(pane1);
+		setJMenuBar(new BasicMenuBar());
+		
 		BasicScrollPane.init(scroller);
-
-		textPane.setForeground(Color.WHITE); textPane.setText(toEdit.getDescription());
-
-		savedLbl.setForeground(Color.WHITE); savedLbl.setFont(savedLbl.getFont().deriveFont(Font.PLAIN, 18));
-
+		
+		textPane.setForeground(Color.WHITE);
+		textPane.setText(toEdit.getDescription());
+		
+		savedLbl.setForeground(Color.WHITE);
+		savedLbl.setFont(savedLbl.getFont().deriveFont(Font.PLAIN, 18));
+		
 		abschickenButton.addActionListener(e -> {
 			toEdit.setDescription(textPane.getText());
-
+			
 			if(title.contains("Wetter")) info.setWeather(toEdit);
 			else if(title.contains("Sport")) info.setSport(toEdit);
 			else if(title.contains("Politik")) info.setPolitics(toEdit);
@@ -53,14 +56,16 @@ public class EditFrame extends AbstractFrame {
 			else if(title.contains("Wissenschaft")) info.setSciene(toEdit);
 			else if(title.contains("Literatur")) info.setLiterature(toEdit);
 			else if(title.contains("Kultur")) info.setCulture(toEdit);
-
-			Main.getFile(info.getYear()).setValue("info", info); savedLbl.setVisible(true);
+			
+			Main.getFile(info.getYear()).setValue("info", info);
+			savedLbl.setVisible(true);
 		});
-
+		
 		init();
-
+		
 		backButton.addActionListener(e -> {
-			this.dispose(); new YearFrame(info);
+			this.dispose();
+			new YearFrame(info);
 		});
 	}
 }

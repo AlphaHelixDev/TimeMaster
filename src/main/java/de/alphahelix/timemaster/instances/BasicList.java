@@ -22,10 +22,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasicList extends JList {
-
-	public BasicList(ListModel dataModel) {
+	
+	public BasicList (ListModel dataModel) {
 		super(dataModel);
-
-		setOpaque(true); setBackground(new Color(51, 153, 255)); setForeground(Color.WHITE);
+		
+		setOpaque(true);
+		setBackground(new Color(51, 153, 255));
+		setForeground(Color.WHITE);
 	}
 }

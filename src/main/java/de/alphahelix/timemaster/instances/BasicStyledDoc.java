@@ -24,13 +24,13 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 
 public class BasicStyledDoc extends DefaultStyledDocument {
-
-	public BasicStyledDoc(StyleContext styles) {
+	
+	public BasicStyledDoc (StyleContext styles) {
 		super(styles);
 	}
-
+	
 	@Override
-	public Color getBackground(AttributeSet attr) {
+	public Color getBackground (AttributeSet attr) {
 		return new Color(0, 0, 0, 0);
 	}
 }

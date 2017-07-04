@@ -22,29 +22,43 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DownloadButton extends JButton {
-
-	public DownloadButton() {
-		setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x3399ff)); setForeground(Color.white);
+	
+	public DownloadButton () {
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x3399ff));
+		setForeground(Color.white);
 		setUI(new StyledButtonUI());
 	}
-
-	public DownloadButton(Icon icon) {
-		super(icon); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x3399ff));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public DownloadButton (Icon icon) {
+		super(icon);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x3399ff));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
-
-	public DownloadButton(String text) {
-		super(text); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x3399ff));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public DownloadButton (String text) {
+		super(text);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x3399ff));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
-
-	public DownloadButton(Action a) {
-		super(a); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x3399ff));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public DownloadButton (Action a) {
+		super(a);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x3399ff));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
-
-	public DownloadButton(String text, Icon icon) {
-		super(text, icon); setFont(new Font("Calibri", Font.PLAIN, 14)); setBackground(new Color(0x3399ff));
-		setForeground(Color.white); setUI(new StyledButtonUI());
+	
+	public DownloadButton (String text, Icon icon) {
+		super(text, icon);
+		setFont(new Font("Calibri", Font.PLAIN, 14));
+		setBackground(new Color(0x3399ff));
+		setForeground(Color.white);
+		setUI(new StyledButtonUI());
 	}
 }

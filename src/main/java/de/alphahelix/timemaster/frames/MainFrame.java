@@ -34,40 +34,42 @@ public class MainFrame extends AbstractFrame {
 	private JButton neuerBeitragButton;
 	private JPanel chooseYear;
 	private JLabel chooseYearLBL;
-
-	public MainFrame() throws HeadlessException {
+	
+	public MainFrame () throws HeadlessException {
 		super("Home");
-
+		
 		setContentPane(panel1);
-
-		chooseYear.setBackground(new Color(51, 153, 255)); chooseYearField.setValue(1916);
-
+		
+		chooseYear.setBackground(new Color(51, 153, 255));
+		chooseYearField.setValue(1916);
+		
 		submitButton.addActionListener((e) -> {
 			Main.addFile((int) chooseYearField.getValue(), new YearFile((int) chooseYearField.getValue(), new YearInformation((Integer) chooseYearField.getValue(), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"), new Information("put in infos"))));
-
+			
 			YearInformation.register(Main.getFile((int) chooseYearField.getValue()).getInfo());
-
+			
 			YearInformation info;
-
-			if((int) chooseYearField.getValue() > 2017) {
+			
+			if((int) chooseYearField.getValue() > 2017)
 				info = YearInformation.getInfo(2017);
-			} else {
+			else
 				info = YearInformation.getInfo((int) chooseYearField.getValue());
-			}
-
-			new YearFrame(info); this.dispose();
+			
+			
+			new YearFrame(info);
+			this.dispose();
 		});
-
+		
 		neuerBeitragButton.addActionListener(e -> {
 			this.dispose();
 			if((int) chooseYearField.getValue() > 2017) new SubmitInfoFrame(YearInformation.getInfo(2017));
 			else new SubmitInfoFrame(YearInformation.getInfo((Integer) chooseYearField.getValue()));
 		});
-
+		
 		BasicSpinner.init(chooseYearField);
-
+		
 		chooseYearField.setOpaque(false);
-
+		
 		init();
 	}
 }

@@ -22,13 +22,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasicMenuBar extends JMenuBar {
-	public BasicMenuBar() {
+	public BasicMenuBar () {
 		setPreferredSize(new Dimension(getWidth(), 50));
 	}
-
+	
 	@Override
-	protected void paintComponent(Graphics g) {
-		super.paintComponent(g); Graphics2D g2d = (Graphics2D) g; g2d.setColor(new Color(51, 153, 255));
+	protected void paintComponent (Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setColor(new Color(51, 153, 255));
 		g2d.fillRect(0, 0, getWidth(), getHeight());
 	}
 }

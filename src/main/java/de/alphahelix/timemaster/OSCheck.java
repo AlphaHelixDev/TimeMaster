@@ -22,12 +22,12 @@ import java.util.Locale;
 
 public final class OSCheck {
 	protected static OSType detectedOS;
-
+	
 	/**
 	 * detect the operating system from the os.name System property and cache
 	 * the result
 	 */
-	public static OSType getOperatingSystemType() {
+	public static OSType getOperatingSystemType () {
 		if(detectedOS == null) {
 			String OS = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
 			if((OS.contains("mac")) || (OS.contains("darwin"))) {
@@ -39,9 +39,10 @@ public final class OSCheck {
 			} else {
 				detectedOS = OSType.Other;
 			}
-		} return detectedOS;
+		}
+		return detectedOS;
 	}
-
+	
 	/**
 	 * types of Operating Systems
 	 */
